@@ -2,7 +2,7 @@
 
 echo "reboot: "
 echo $(date)
-PORT=40001
+PORT=`(cat /boot/cmmc_port.txt | tr -d '\n')`
 while true
 do
  /bin/pidof ssh > /dev/null
