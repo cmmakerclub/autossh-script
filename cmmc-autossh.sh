@@ -9,7 +9,7 @@ echo "HOST=${REMOTE_HOST}"
 if [[ $? -ne 0 ]]; then
   echo $(date)
   echo "Restarting autossh service..."
-  autossh -f -N -M 65500 -o ServerAliveInterval=20 -R $REMOTE_PORT:127.0.0.1:22 $REMOTE_HOST -v
+  autossh -f -N -M 0 -o ServerAliveInterval=20 -R $REMOTE_PORT:127.0.0.1:22 $REMOTE_HOST -v
 else
   echo "autossh is running"
 fi
