@@ -16,6 +16,8 @@ EOF
   }
   case "$1" in
     config) echo "enter config";;
+    install) echo "enter install";;
+    uninstall) echo "enter uninstall";;
     *) usage "autossh";;
   esac
 
