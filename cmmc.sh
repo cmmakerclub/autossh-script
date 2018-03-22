@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+
 VERSION=0.0.1
 usage() {
         cat <<EOF
@@ -8,23 +9,10 @@ EOF
         exit 1
 } 
 
-autossh_fn() {
-  usage() {
-        cat <<EOF
-    Usage: $0 $1 [config|help]
-EOF
-  }
-  case "$1" in
-    config) echo "enter config";;
-    install) echo "enter install";;
-    uninstall) echo "enter uninstall";;
-    *) usage "autossh";;
-  esac
-
-}
-
 case "$1" in
         --help|help) usage;;
-        autossh) autossh_fn $2;;
+        autossh) 
+          source /home/pi/autossh-script/subtasks/_autossh.sh;
+          autossh_fn $2;;
         *) usage;;
 esac
