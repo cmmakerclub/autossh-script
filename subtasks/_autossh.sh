@@ -26,6 +26,7 @@ EOF
         echo "server port = ${port}"
         echo "${host}" > /boot/cmmc_ssh_host.txt
         echo "${port}" > /boot/cmmc_ssh_port.txt
+        cmmc autossh start
     ;;
     start)
        echo "starting cmmc-autossh"
