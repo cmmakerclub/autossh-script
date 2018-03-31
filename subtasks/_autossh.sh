@@ -12,16 +12,20 @@ EOF
              read -e -r -p "Enter server host: " host
         done
         while :; do
-            read -rp 'Enter server port(2000-8000): ' port
+            read -rp 'Enter server port(22001-22999): ' port
             [[ $port =~ ^[[:digit:]]+$ ]] || continue
             (port=(10#$port))
-            (((port<=8000) && (port>=2000))) || continue
+            (((port<=22001) && (port>=22999))) || continue
             break
         done 
         echo "server host = ${host}"
         echo "server port = ${port}" 
         sudo echo "${host}" > /boot/cmmc_ssh_host.txt
         sudo echo "${port}" > /boot/cmmc_ssh_port.txt
+    ;;
+    start)
+       echo "starting cmmc-autossh"
+      /home/$USER/autossh-script/cmmc-autossh.sh
     ;;
     check) 
         echo "loading configurations"
