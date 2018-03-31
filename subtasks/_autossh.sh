@@ -15,7 +15,7 @@ EOF
             read -rp 'Enter server port(22001-22999): ' port
             [[ $port =~ ^[[:digit:]]+$ ]] || continue
             (port=(10#$port))
-            (((port<=22001) && (port>=22999))) || continue
+            (((port>=22001) &&(port<=22999))) || continue
             break
         done 
         echo "server host = ${host}"
