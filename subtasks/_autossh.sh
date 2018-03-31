@@ -29,7 +29,7 @@ EOF
     ;;
     start)
        echo "starting cmmc-autossh"
-      /home/$USER/autossh-script/cmmc-autossh.sh
+      /home/pi/autossh-script/cmmc-autossh.sh
     ;;
     check)
         echo "loading configurations"
@@ -40,7 +40,7 @@ EOF
     ;;
     install)
       echo "installing crontab.d"
-      sudo cp -Rvf /home/$USER/autossh-script/cron.d/cmmc_autossh /etc/cron.d/cmmc_autossh
+      sudo cp -Rvf /home/pi/autossh-script/cron.d/cmmc_autossh /etc/cron.d/cmmc_autossh
     ;;
     uninstall)
       echo "enter uninstall"
