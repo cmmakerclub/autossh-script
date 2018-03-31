@@ -33,12 +33,10 @@ EOF
     install) 
       echo "installing crontab.d"
       sudo cp -Rvf /home/$USER/autossh-script/cron.d/cmmc_autossh /etc/cron.d/cmmc_autossh 
-      sudo ln -fvs /home/$USER/autossh-script/cmmc.sh /usr/bin/cmmc
     ;;
     uninstall) 
       echo "enter uninstall"
       sudo rm -f /etc/cron.d/cmmc_autossh 
-      sudo rm -f /usr/bin/cmmc
     ;;
     *) usage "autossh";;
   esac
