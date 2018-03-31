@@ -15,11 +15,11 @@ case "$1" in
           echo "enter install"
           cd /home/pi
           wget https://github.com/cmmakerclub/autossh-script/archive/v0.0.1.zip  -O- | tar xvz
-          sudo ln -fvs /home/$USER/autossh-script/cmmc.sh /usr/bin/cmmc
+          #sudo ln -fvs /home/$USER/autossh-script/cmmc.sh /usr/bin/cmmc
         ;;
         uninstall) 
           echo "uninstall"
-          sudo unlink /usr/bin/cmmc
+          sudo rm -v /usr/bin/cmmc
         ;;
         autossh) 
           source /home/pi/autossh-script/subtasks/_autossh.sh;
