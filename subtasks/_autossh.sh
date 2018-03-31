@@ -30,7 +30,10 @@ EOF
         echo "server host = ${host}"
         echo "server port = ${port}" 
     ;;
-    install) echo "enter install";;
+    install) 
+      echo "installing crontab.d"
+      sudo cp -Rvf /home/$USER/autossh-script/cron.d/cmmc_autossh /etc/cron.d/cmmc_autossh 
+    ;;
     uninstall) echo "enter uninstall";;
     *) usage "autossh";;
   esac
